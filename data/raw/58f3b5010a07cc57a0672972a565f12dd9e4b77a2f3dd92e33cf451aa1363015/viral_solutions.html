@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        vega-chart.vega-embed {
+          width: 100%;
+          display: flex;
+        }
+        vega-chart.vega-embed details,
+        vega-chart.vega-embed details summary {
+          position: relative;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Chart</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+            
+  </head>
+  <body>
+    <div id="vega-chart"></div>
+    <script type="text/javascript">
+
+{
+    const spec = {"$schema":"https://vega.github.io/schema/vega-lite/v5.json","datasets":{"densities":[{"density":1.0,"solution_number":0},{"density":9.852044706308772e-252,"solution_number":1}],"haplotype_fractions":[{"haplotype":"AY.43","fraction":0.25,"solution_number":0},{"haplotype":"BA.1","fraction":0.09375,"solution_number":0},{"haplotype":"BA.1.18","fraction":0.328125,"solution_number":0},{"haplotype":"XD","fraction":0.24609375,"solution_number":0},{"haplotype":"XS","fraction":0.08203125,"solution_number":0},{"haplotype":"AY.43","fraction":0.25,"solution_number":1},{"haplotype":"BA.1","fraction":0.0625,"solution_number":1},{"haplotype":"BA.1.18","fraction":0.28593750000000007,"solution_number":1},{"haplotype":"XD","fraction":0.2513671875,"solution_number":1},{"haplotype":"XS","fraction":0.15019531249999996,"solution_number":1}]},"vconcat":[{"data":{"name":"densities"},"mark":{"type":"line","point":true,"tooltip":true},"encoding":{"x":{"field":"solution_number","type":"nominal","axis":{"title":null,"labels":false}},"y":{"field":"density","type":"quantitative","scale":{"type":"log"},"axis":{"title":"log(posterior density)"}},"color":{"value":"black"}}},{"data":{"name":"haplotype_fractions"},"mark":{"type":"bar","tooltip":true},"encoding":{"x":{"field":"solution_number","type":"ordinal","axis":{"title":"composition","labels":false}},"y":{"field":"fraction","type":"quantitative","aggregate":"sum","axis":{"title":"fraction"}},"color":{"field":"haplotype","scale":{"scheme":"category20"}}}}]};
+    const opts = {"renderer":"svg"}
+    vegaEmbed('#vega-chart', spec, opts).catch(console.error);
+}
+
+    </script>
+  </body>
+</html>
+        

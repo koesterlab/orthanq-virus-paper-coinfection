@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        vega-chart.vega-embed {
+          width: 100%;
+          display: flex;
+        }
+        vega-chart.vega-embed details,
+        vega-chart.vega-embed details summary {
+          position: relative;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Chart</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.16"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+            
+  </head>
+  <body>
+    <div id="vega-chart"></div>
+    <script type="text/javascript">
+
+{
+    const spec = {"$schema":"https://vega.github.io/schema/vega-lite/v5.json","datasets":{"densities":[{"density":0.999999986997094,"solution_number":0},{"density":1.3002905973586636e-8,"solution_number":1},{"density":6.237562005400322e-23,"solution_number":2},{"density":2.4956000772266742e-27,"solution_number":3},{"density":1.2691824036840799e-27,"solution_number":4},{"density":1.981457048343275e-28,"solution_number":5},{"density":2.1971000469200633e-30,"solution_number":6},{"density":1.9206281294793303e-67,"solution_number":7},{"density":2.197621487974769e-108,"solution_number":8},{"density":3.640333855631198e-112,"solution_number":9}],"haplotype_fractions":[{"haplotype":"XF","fraction":0.012499999999999956,"solution_number":0},{"haplotype":"XS","fraction":0.9875,"solution_number":0},{"haplotype":"XF","fraction":0.25,"solution_number":1},{"haplotype":"XS","fraction":0.75,"solution_number":1},{"haplotype":"XF","fraction":0.11249999999999998,"solution_number":2},{"haplotype":"XS","fraction":0.8875000000000001,"solution_number":2},{"haplotype":"XF","fraction":0.375,"solution_number":3},{"haplotype":"XS","fraction":0.625,"solution_number":3},{"haplotype":"XF","fraction":0.3125,"solution_number":4},{"haplotype":"XS","fraction":0.6875,"solution_number":4},{"haplotype":"XF","fraction":0.4125,"solution_number":5},{"haplotype":"XS","fraction":0.5874999999999999,"solution_number":5},{"haplotype":"XF","fraction":0.5,"solution_number":6},{"haplotype":"XS","fraction":0.5,"solution_number":6},{"haplotype":"XF","fraction":0.2125,"solution_number":7},{"haplotype":"XS","fraction":0.7875,"solution_number":7},{"haplotype":"XF","fraction":0.5125000000000001,"solution_number":8},{"haplotype":"XS","fraction":0.48749999999999993,"solution_number":8},{"haplotype":"XF","fraction":0.6125,"solution_number":9},{"haplotype":"XS","fraction":0.3875,"solution_number":9}]},"vconcat":[{"data":{"name":"densities"},"mark":{"type":"line","point":true,"tooltip":true},"encoding":{"x":{"field":"solution_number","type":"nominal","axis":{"title":null,"labels":false}},"y":{"field":"density","type":"quantitative","scale":{"type":"log"},"axis":{"title":"log(posterior density)"}},"color":{"value":"black"}}},{"data":{"name":"haplotype_fractions"},"mark":{"type":"bar","tooltip":true},"encoding":{"x":{"field":"solution_number","type":"ordinal","axis":{"title":"composition","labels":false}},"y":{"field":"fraction","type":"quantitative","aggregate":"sum","axis":{"title":"fraction"}},"color":{"field":"haplotype","scale":{"scheme":"category20"}}}}]};
+    const opts = {"renderer":"svg"}
+    vegaEmbed('#vega-chart', spec, opts).catch(console.error);
+}
+
+    </script>
+  </body>
+</html>
+        
