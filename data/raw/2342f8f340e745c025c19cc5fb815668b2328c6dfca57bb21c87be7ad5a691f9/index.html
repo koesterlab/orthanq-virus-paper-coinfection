@@ -2,11 +2,26 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Redirecting...</title>
+    <title>Datavzrd</title>
 </head>
 <body>
+<script src="./static/bundle.js"></script>
 <script type="text/javascript">
-    window.location.href = "predictions/index_1.html";
+    const urlParams = new URLSearchParams(window.location.search);
+    const viewParam = urlParams.get('view');
+    const version = '2.58.0';
+    const name = 'All tool predictions';
+    const views = {"predictions":"### Tool predictions\nTable that is used to create the stacked barchart for SARS-CoV-2 variant predictions for Orthanq, Kallisto, Pangolin \nand Nextclade for two studies that include 13 samples with co-infection by Delta and Omicron variants of SARS-CoV-2.\n"};
+    const table = "predictions";
+    let redirectUrl = viewParam ? `${viewParam}/index_1.html` : `${table}/index_1.html`;
+    urlParams.delete('view');
+    const remainingParams = urlParams.toString();
+    if (remainingParams) redirectUrl += `?${remainingParams}`;
+    if (table || viewParam) {
+        window.location.href = redirectUrl;
+    } else {
+        datavzrd.landing_page();
+    }
 </script>
 </body>
 </html>
